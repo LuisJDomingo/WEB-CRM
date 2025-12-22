@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'Carnival VP';
+    src: url('/fonts/CarnivalVP.woff2') format('woff2'),
+         url('/fonts/CarnivalVP.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+}
+/* --------------------------------------------------
+   Paleta pastel — versión final completa
+   - Roboto/Nunito para el cuerpo (amable y legible)
+   - Playfair Display para títulos (elegante)
+   - Párrafos más pequeños y mayor interlineado
+   - Variables en oklch para light/dark coherentes
+-------------------------------------------------- */
+
+/* --------------------------------------------------
+   Definición de variables (light / dark)
+   Pasteles suaves
+-------------------------------------------------- */
+:root {
+  --background: oklch(0.98 0.02 100);
+  --foreground: oklch(0.16 0.01 95);
+
+  --primary: oklch(0.93 0.05 90);
+  --primary-foreground: oklch(0.12 0.01 95);
+
+  --accent-lch: 86.307% 0.11478 112.4;
+  --accent: oklch(var(--accent-lch));
+  --accent-foreground: oklch(0.12 0.01 95);
+
+  --secondary: oklch(94.505% 0.04262 129.066);
+  --secondary-foreground: oklch(0.17 0.01 95);
+
+  --muted: oklch(0.96 0.02 100);
+  --muted-foreground: oklch(0.45 0.01 95);
+
+  --card: oklch(0.99 0.01 100);
+  --card-foreground: oklch(0.16 0.01 95);
+
+  --popover: oklch(0.99 0.01 100);
+  --popover-foreground: oklch(0.16 0.01 95);
+
+  --destructive: oklch(0.74 0.20 30);
+  --destructive-foreground: oklch(0.98 0 0);
+
+  --border: oklch(0.90 0.01 95);
+  --input: oklch(0.94 0.01 95);
+  --ring: oklch(0.90 0.04 200);
+
+  --sidebar: oklch(0.985 0.01 100);
+  --sidebar-foreground: oklch(0.16 0.01 95);
+  --sidebar-accent: oklch(0.93 0.05 90);
+  --sidebar-accent-foreground: oklch(0.12 0.01 95);
+  --sidebar-border: oklch(0.90 0.01 95);
+  --sidebar-ring: oklch(0.92 0.05 90);
+
+  --chart-1: oklch(0.93 0.05 90);
+  --chart-2: oklch(0.88 0.04 200);
+  --chart-3: oklch(0.83 0.03 120);
+  --chart-4: oklch(0.78 0.03 40);
+  --chart-5: oklch(0.74 0.02 300);
+
+  --radius: 0.45rem;
+}
+
+.dark {
+  --background: oklch(0.10 0.01 95);
+  --foreground: oklch(0.95 0.01 95);
+
+  --primary: oklch(0.68 0.04 90);
+  --primary-foreground: oklch(0.98 0.01 95);
+
+  --accent-lch: 78.1% 0.11405 97.172;
+  --accent-foreground: oklch(0.98 0.01 95);
+
+  --secondary: oklch(0.16 0.01 95);
+  --secondary-foreground: oklch(0.94 0.01 95);
+
+  --muted: oklch(0.20 0.01 95);
+  --muted-foreground: oklch(0.94 0.01 95);
+
+  --card: oklch(0.14 0.01 95);
+  --card-foreground: oklch(0.96 0.01 95);
+
+  --popover: oklch(0.14 0.01 95);
+  --popover-foreground: oklch(0.96 0.01 95);
+
+  --border: oklch(0.22 0.01 95);
+  --input: oklch(0.18 0.01 95);
+  --ring: oklch(0.78 0.05 90);
+
+  --sidebar: oklch(0.12 0.01 95);
+  --sidebar-foreground: oklch(0.96 0.01 95);
+  --sidebar-accent: oklch(0.70 0.04 90);
+  --sidebar-accent-foreground: oklch(0.96 0.01 95);
+  --sidebar-border: oklch(0.22 0.01 95);
+  --sidebar-ring: oklch(0.72 0.03 90);
+
+  --chart-1: oklch(0.73 0.04 90);
+  --chart-2: oklch(75.527% 0.11563 110.012);
+  --chart-3: oklch(0.63 0.03 120);
+  --chart-4: oklch(0.58 0.02 40);
+  --chart-5: oklch(0.54 0.02 300);
+}
+
+/* --------------------------------------------------
+   Base y tipografía
+-------------------------------------------------- */
+@layer base {
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+  }
+
+  html {
+    font-family: 'Nunito', 'Roboto', system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.6;
+    font-size: 16px;
+  }
+
+  h1,h2,h3,h4,h5,h6 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    margin-top: 0;
+    color: var(--foreground);
+  }
+
+  p {
+    font-family: 'Nunito', system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial;
+    font-size: 0.875rem; /* 15px */
+    line-height: 1.75;
+    color: var(--muted-foreground);
+    margin-bottom: 1rem;
+  }
+
+  small, .muted {
+    font-size: 0.8125rem;
+    color: var(--muted-foreground);
+  }
+
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+}
+
+/* --------------------------------------------------
+   Componentes
+-------------------------------------------------- */
+@layer components {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @media (min-width: 640px) { .container { padding-left:1.5rem; padding-right:1.5rem; } }
+  @media (min-width: 1024px) { .container { padding-left:2rem; padding-right:2rem; max-width:1280px; } }
+
+  .flex { min-height:0; min-width:0; }
+
+  .section-divider { @apply h-px bg-border my-16 md:my-24; }
+
+  .section-title {
+    @apply text-4xl md:text-5xl font-semibold text-foreground mb-4;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: -0.02em;
+  }
+
+  .section-subtitle {
+    @apply text-base md:text-lg text-muted-foreground mb-10;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+  }
+
+  /* Galería - imagenes correctamente renderizadas */
+  .gallery-image {
+    @apply relative overflow-hidden rounded-lg;
+    width: 100%;
+    aspect-ratio: 16/9; /* asegura que la imagen se vea */
+  }
+
+  .gallery-image img {
+    @apply w-full h-full object-cover transition-transform duration-500 hover:scale-105;
+    display: block;
+  }
+
+  .gallery-overlay {
+    @apply absolute inset-0 bg-black/0 hover:bg-black/25 transition-colors duration-300 flex items-center justify-center opacity-0 hover:opacity-100;
+  }
+
+  .cta-button {
+    @apply px-6 py-2 border border-accent text-accent hover:bg-accent hover:text-accent-foreground transition-all duration-300 rounded-md font-medium;
+    background: transparent;
+  }
+
+  .cta-button-primary { @apply px-6 py-2 bg-accent text-accent-foreground hover:opacity-95 transition-all duration-300 rounded-md font-medium; }
+  .cta-ghost { @apply px-6 py-2 border border-border rounded-md font-medium bg-transparent; }
+
+ .number-marker {@apply text-5xl md:text-6xl font-bold text-accent/[0.18] mb-4 font-playfair;}
+
+  .image-frame { @apply border border-accent/20 p-0 rounded-md; }
+  .testimonial-card { @apply bg-card border border-border rounded-md p-6 hover:border-accent/40 transition-colors duration-300; }
+
+  .form-input, input, textarea, select {
+  @apply bg-input border border-border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-ring;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.95rem;
+}
+
+  }
+
+  .badge-soft { @apply inline-block text-sm px-3 py-1 rounded-full bg-muted text-muted-foreground; }
+
+/* --------------------------------------------------
+   Scrollbar y utilidades
+-------------------------------------------------- */
+html { font-family: 'Roboto', system-ui, sans-serif; }
+
+h1 { font-size: clamp(1.6rem, 3vw, 2.8rem); }
+h2 { font-size: clamp(1.3rem, 2.4vw, 2rem); }
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: oklch(0.76 0.04 80); border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { background: oklch(0.70 0.04 80); }
+
+.text-muted { color: var(--muted-foreground); }
+.bg-soft { background-color: var(--card); }
+.rounded-soft { border-radius: var(--radius); }
+.shadow-soft { box-shadow: 0 6px 20px rgba(0,0,0,0.04); }
+
+.btn-gradient {
+  background: linear-gradient(135deg, color-mix(in srgb, var(--primary) 30%, white 70%), color-mix(in srgb, var(--accent) 30%, white 70%));
+  color: var(--primary-foreground);
+  border: none;
+  padding: .6rem 1rem;
+  border-radius: 0.6rem;
+  font-weight: 500;
+  transition: transform .18s ease, opacity .18s ease;
+}
+.btn-gradient:active { transform: translateY(1px); }
+
+/* Fin CSS pastel + fuentes amables + galería arreglada */

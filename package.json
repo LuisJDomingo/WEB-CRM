@@ -1,0 +1,47 @@
+{
+  "name": "Narrativa de Bodas-web",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "prettier --check .",
+    "server": "tsx watch server.ts"
+  },
+  "dependencies": {
+    "@hello-pangea/dnd": "^16.6.0",
+    "@supabase/supabase-js": "^2.87.0",
+    "axios": "^1.13.2",
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.5",
+    "date-fns": "^4.1.0",
+    "express": "^4.22.1",
+    "jsonwebtoken": "^9.0.3",
+    "lucide-react": "^0.562.0",
+    "multer": "^2.0.2",
+    "react": "^19.0.0",
+    "react-big-calendar": "^1.19.4",
+    "react-dom": "^19.0.0",
+    "react-icons": "^5.5.0",
+    "sonner": "^1.4.0",
+    "wouter": "^3.2.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^20.10.6",
+    "@types/react": "^18.2.48",
+    "@types/react-dom": "^18.2.18",
+    "@vitejs/plugin-react": "^4.3.0",
+    "autoprefixer": "^10.4.22",
+    "dotenv": "^16.3.1",
+    "postcss": "^8.4.35",
+    "prettier": "^3.1.1",
+    "tailwindcss": "^3.4.10",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "vite": "^6.0.0"
+  }
+}

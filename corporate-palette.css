@@ -1,0 +1,41 @@
+/* --------------------------------------------------
+   Paleta de Colores Corporativos
+   --------------------------------------------------
+   - Colores extraídos de index.css
+   - Valores en oklch y su equivalente en HEX
+   - Organizado por tema (light/dark)
+-------------------------------------------------- */
+
+/* Tema Claro (Light Mode) */
+:root {
+  /* Fondo y Texto */
+  --light-background: oklch(0.98 0.02 100); /* HEX: #f9f7f7 */
+  --light-foreground: oklch(0.16 0.01 95);  /* HEX: #282629 */
+
+  /* Colores Principales */
+  --light-primary: oklch(0.93 0.05 90);     /* HEX: #f2e9e4 */
+  --light-secondary: oklch(94.5% 0.043 129.07); /* HEX: #e4edeb */
+  --light-accent: oklch(86.3% 0.115 112.4); /* HEX: #b4e0d6 */
+
+  /* Colores de Estado */
+  --light-destructive: oklch(0.74 0.20 30); /* HEX: #e56d61 */
+}
+
+/* Tema Oscuro (Dark Mode) */
+.dark {
+  /* Fondo y Texto */
+  --dark-background: oklch(0.10 0.01 95);  /* HEX: #19171a */
+  --dark-foreground: oklch(0.95 0.01 95);  /* HEX: #efedf0 */
+
+  /* Colores Principales */
+  --dark-primary: oklch(0.68 0.04 90);     /* HEX: #a99891 */
+  --dark-secondary: oklch(0.16 0.01 95);   /* HEX: #282629 */
+  --dark-accent: oklch(78.1% 0.114 97.17); /* HEX: #89c8b7 */
+
+  /* Colores de Estado */
+  --dark-destructive: oklch(0.74 0.20 30); /* HEX: #e56d61 (mismo que el claro) */
+}
+
+/* Nota: Los valores HEX son una representación aproximada en el espacio de color sRGB
+   y pueden variar ligeramente dependiendo de la herramienta de conversión.
+   Los valores oklch son la fuente de verdad para mantener la consistencia perceptual. */
