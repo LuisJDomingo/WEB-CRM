@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,110 +6,111 @@
 
 @layer base {
   @font-face {
-    font-family: 'Carnival VP';
-    src: url('/fonts/CarnivalVP.woff2') format('woff2'),
-         url('/fonts/CarnivalVP.woff') format('woff');
+    font-family: 'Gistesy';
+    src: url('/fonts/Gistesy.woff2') format('woff2'),
+         url('/fonts/Gistesy.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
   }
 }
 /* --------------------------------------------------
-   Paleta pastel — versión final completa
-   - Roboto/Nunito para el cuerpo (amable y legible)
-   - Playfair Display para títulos (elegante)
-   - Párrafos más pequeños y mayor interlineado
-   - Variables en oklch para light/dark coherentes
+   Paleta: Editorial Bold (Estilo Time / Life)
+   - Alto impacto visual con Rojo Carmesí.
+   - Base neutra (Blanco/Negro) para máxima legibilidad periodística.
+   - Transmite autoridad, pasión y actualidad.
 -------------------------------------------------- */
 
 /* --------------------------------------------------
    Definición de variables (light / dark)
-   Pasteles suaves
+   Classic Photojournalism
 -------------------------------------------------- */
 :root {
-  --background: oklch(0.98 0.02 100);
-  --foreground: oklch(0.16 0.01 95);
+  --background: oklch(0.99 0 0);       /* Blanco papel puro */
+  --foreground: oklch(0.35 0.02 10);   /* Gris grafito suave y cálido */
 
-  --primary: oklch(0.93 0.05 90);
-  --primary-foreground: oklch(0.12 0.01 95);
+  --primary: oklch(0.30 0.02 10);      /* Gris oscuro para títulos principales */
+  --primary-foreground: oklch(0.98 0 0);
 
-  --accent-lch: 86.307% 0.11478 112.4;
+  /* Acento: Rojo Carmesí Editorial (Pasión e Impacto) */
+  --accent-lch: 52% 0.22 29;
   --accent: oklch(var(--accent-lch));
-  --accent-foreground: oklch(0.12 0.01 95);
+  --accent-foreground: oklch(0.98 0 0);
 
-  --secondary: oklch(94.505% 0.04262 129.066);
-  --secondary-foreground: oklch(0.17 0.01 95);
+  --secondary: oklch(0.96 0 0);        /* Gris neutro claro */
+  --secondary-foreground: oklch(0.35 0.02 10);
 
-  --muted: oklch(0.96 0.02 100);
-  --muted-foreground: oklch(0.45 0.01 95);
+  --muted: oklch(0.92 0 0);
+  --muted-foreground: oklch(0.55 0.01 10); /* Gris medio para textos secundarios */
 
-  --card: oklch(0.99 0.01 100);
-  --card-foreground: oklch(0.16 0.01 95);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.35 0.02 10);
 
-  --popover: oklch(0.99 0.01 100);
-  --popover-foreground: oklch(0.16 0.01 95);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.35 0.02 10);
 
-  --destructive: oklch(0.74 0.20 30);
-  --destructive-foreground: oklch(0.98 0 0);
+  --destructive: oklch(0.55 0.20 20);
+  --destructive-foreground: oklch(1 0 0);
 
-  --border: oklch(0.90 0.01 95);
-  --input: oklch(0.94 0.01 95);
-  --ring: oklch(0.90 0.04 200);
+  --border: oklch(0.85 0 0);
+  --input: oklch(0.85 0 0);
+  --ring: oklch(0.52 0.22 29);         /* Anillo de foco en rojo */
 
-  --sidebar: oklch(0.985 0.01 100);
-  --sidebar-foreground: oklch(0.16 0.01 95);
-  --sidebar-accent: oklch(0.93 0.05 90);
-  --sidebar-accent-foreground: oklch(0.12 0.01 95);
-  --sidebar-border: oklch(0.90 0.01 95);
-  --sidebar-ring: oklch(0.92 0.05 90);
+  --sidebar: oklch(0.98 0 0);
+  --sidebar-foreground: oklch(0.35 0.02 10);
+  --sidebar-accent: oklch(0.94 0 0);
+  --sidebar-accent-foreground: oklch(0.35 0.02 10);
+  --sidebar-border: oklch(0.85 0 0);
+  --sidebar-ring: oklch(0.52 0.22 29);
 
-  --chart-1: oklch(0.93 0.05 90);
-  --chart-2: oklch(0.88 0.04 200);
-  --chart-3: oklch(0.83 0.03 120);
-  --chart-4: oklch(0.78 0.03 40);
-  --chart-5: oklch(0.74 0.02 300);
+  --chart-1: oklch(0.52 0.22 29); /* Rojo principal */
+  --chart-2: oklch(0.25 0 0);     /* Negro */
+  --chart-3: oklch(0.60 0 0);     /* Gris medio */
+  --chart-4: oklch(0.85 0 0);     /* Gris claro */
+  --chart-5: oklch(0.40 0.15 30); /* Rojo oscuro */
 
-  --radius: 0.45rem;
+  --radius: 0.25rem; /* Bordes más rectos para seriedad editorial */
 }
 
 .dark {
-  --background: oklch(0.10 0.01 95);
-  --foreground: oklch(0.95 0.01 95);
+  --background: oklch(0.10 0 0);       /* Negro profundo */
+  --foreground: oklch(0.98 0 0);       /* Blanco */
 
-  --primary: oklch(0.68 0.04 90);
-  --primary-foreground: oklch(0.98 0.01 95);
+  --primary: oklch(0.98 0 0);          /* Blanco */
+  --primary-foreground: oklch(0.10 0 0);
 
-  --accent-lch: 78.1% 0.11405 97.172;
-  --accent-foreground: oklch(0.98 0.01 95);
+  /* Rojo vibrante sobre fondo oscuro */
+  --accent-lch: 55% 0.22 29;
+  --accent-foreground: oklch(1 0 0);
 
-  --secondary: oklch(0.16 0.01 95);
-  --secondary-foreground: oklch(0.94 0.01 95);
+  --secondary: oklch(0.20 0 0);
+  --secondary-foreground: oklch(0.98 0 0);
 
-  --muted: oklch(0.20 0.01 95);
-  --muted-foreground: oklch(0.94 0.01 95);
+  --muted: oklch(0.20 0 0);
+  --muted-foreground: oklch(0.70 0 0);
 
-  --card: oklch(0.14 0.01 95);
-  --card-foreground: oklch(0.96 0.01 95);
+  --card: oklch(0.12 0 0);
+  --card-foreground: oklch(0.98 0 0);
 
-  --popover: oklch(0.14 0.01 95);
-  --popover-foreground: oklch(0.96 0.01 95);
+  --popover: oklch(0.12 0 0);
+  --popover-foreground: oklch(0.98 0 0);
 
-  --border: oklch(0.22 0.01 95);
-  --input: oklch(0.18 0.01 95);
-  --ring: oklch(0.78 0.05 90);
+  --border: oklch(0.25 0 0);
+  --input: oklch(0.25 0 0);
+  --ring: oklch(0.55 0.22 29);
 
-  --sidebar: oklch(0.12 0.01 95);
-  --sidebar-foreground: oklch(0.96 0.01 95);
-  --sidebar-accent: oklch(0.70 0.04 90);
-  --sidebar-accent-foreground: oklch(0.96 0.01 95);
-  --sidebar-border: oklch(0.22 0.01 95);
-  --sidebar-ring: oklch(0.72 0.03 90);
+  --sidebar: oklch(0.12 0 0);
+  --sidebar-foreground: oklch(0.98 0 0);
+  --sidebar-accent: oklch(0.20 0 0);
+  --sidebar-accent-foreground: oklch(0.98 0 0);
+  --sidebar-border: oklch(0.25 0 0);
+  --sidebar-ring: oklch(0.55 0.22 29);
 
-  --chart-1: oklch(0.73 0.04 90);
-  --chart-2: oklch(75.527% 0.11563 110.012);
-  --chart-3: oklch(0.63 0.03 120);
-  --chart-4: oklch(0.58 0.02 40);
-  --chart-5: oklch(0.54 0.02 300);
+  --chart-1: oklch(0.55 0.22 29);
+  --chart-2: oklch(0.80 0 0);
+  --chart-3: oklch(0.95 0 0);
+  --chart-4: oklch(0.40 0 0);
+  --chart-5: oklch(0.60 0 0);
 }
 
 /* --------------------------------------------------
@@ -123,7 +123,7 @@
   }
 
   html {
-    font-family: 'Nunito', 'Roboto', system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial;
+    font-family: 'Lato', system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial;
     scroll-behavior: smooth;
   }
 
@@ -137,16 +137,17 @@
   }
 
   h1,h2,h3,h4,h5,h6 {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 0;
     font-weight: 700;
     margin-top: 0;
     color: var(--foreground);
   }
 
   p {
-    font-family: 'Nunito', system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial;
-    font-size: 0.875rem; /* 15px */
-    line-height: 1.75;
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
     color: var(--muted-foreground);
     margin-bottom: 1rem;
   }
@@ -191,13 +192,23 @@
   .section-title {
     @apply text-4xl md:text-5xl font-semibold text-foreground mb-4;
     font-family: 'Playfair Display', serif;
-    letter-spacing: -0.02em;
+    letter-spacing: 0;
   }
 
   .section-subtitle {
     @apply text-base md:text-lg text-muted-foreground mb-10;
-    font-family: 'Roboto', sans-serif;
     font-weight: 400;
+  }
+
+  /* Título Hero: Blanco y con sombra para leerse sobre fotos (Narrativa de Bodas) */
+  .hero-title {
+    @apply text-5xl md:text-7xl font-bold text-white mb-6;
+    font-family: 'Bodoni Moda', serif;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.6); /* Sombra estilo revista para contraste */
+  }
+
+  .font-gistesy {
+    font-family: 'Gistesy', cursive;
   }
 
   /* Galería - imagenes correctamente renderizadas */
@@ -224,17 +235,24 @@
   .cta-button-primary { @apply px-6 py-2 bg-accent text-accent-foreground hover:opacity-95 transition-all duration-300 rounded-md font-medium; }
   .cta-ghost { @apply px-6 py-2 border border-border rounded-md font-medium bg-transparent; }
 
- .number-marker {@apply text-5xl md:text-6xl font-bold text-accent/[0.18] mb-4 font-playfair;}
+ .number-marker {
+    @apply text-5xl md:text-6xl font-bold text-accent/[0.18] mb-4;
+    font-family: 'Playfair Display', serif;
+  }
 
   .image-frame { @apply border border-accent/20 p-0 rounded-md; }
   .testimonial-card { @apply bg-card border border-border rounded-md p-6 hover:border-accent/40 transition-colors duration-300; }
 
   .form-input, input, textarea, select {
   @apply bg-input border border-border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-ring;
-  font-family: 'Roboto', sans-serif;
-  font-size: 0.95rem;
+  font-family: inherit;
+  font-size: 1rem;
 }
 
+  /* Utilidad para párrafos o textos pequeños sobre imagen */
+  .text-shadow-sm { text-shadow: 0 1px 3px rgba(0,0,0,0.8); }
+
+  .text-shadow-lg { text-shadow: 0 4px 20px rgba(0,0,0,0.8); }
   }
 
   .badge-soft { @apply inline-block text-sm px-3 py-1 rounded-full bg-muted text-muted-foreground; }
@@ -242,11 +260,6 @@
 /* --------------------------------------------------
    Scrollbar y utilidades
 -------------------------------------------------- */
-html { font-family: 'Roboto', system-ui, sans-serif; }
-
-h1 { font-size: clamp(1.6rem, 3vw, 2.8rem); }
-h2 { font-size: clamp(1.3rem, 2.4vw, 2rem); }
-
 ::-webkit-scrollbar { width: 8px; height: 8px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: oklch(0.76 0.04 80); border-radius: 8px; }

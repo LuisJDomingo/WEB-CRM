@@ -7,7 +7,10 @@
     "build": "vite build",
     "preview": "vite preview",
     "lint": "prettier --check .",
-    "server": "tsx watch server.ts"
+    "server": "tsx watch server.ts",
+    "chatbot": "cd agente_de_reservas && uvicorn app.main:app --reload --port 8000",
+    "start:all": "npx concurrently \"npm run server\" \"npm run chatbot\" \"npm run dev\"",
+    "clean:install": "rd /s /q node_modules & del package-lock.json & npm install"
   },
   "dependencies": {
     "@hello-pangea/dnd": "^16.6.0",

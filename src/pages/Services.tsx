@@ -85,189 +85,270 @@ const services = [
   const processSteps = [
     {
       number: '01',
-      title: 'Consulta Inicial',
+      title: 'Conexión y Consulta',
       description:
-        'Nos reunimos para conocer tu visión, estilo y necesidades. Respondemos todas tus preguntas.',
+        'Todo comienza con una conversación honesta. Queremos escuchar vuestra historia, entender qué es lo que más valoráis y asegurar que somos el equipo perfecto para vosotros. No es solo una reunión administrativa, es el inicio de una relación de confianza donde resolvemos dudas y conectamos visiones.',
+      image: 'public\\images\\reunion.jpg',
+      alt: 'Pareja conversando en sesión preboda'
     },
     {
       number: '02',
-      title: 'Planificación',
+      title: 'Planificación a Medida',
       description:
-        'Creamos un plan detallado del día, ubicaciones clave y momentos que no queremos perder.',
+        'Diseñamos juntos el cronograma fotográfico para que el día fluya sin estrés. Os asesoramos sobre la mejor luz para la ceremonia, los tiempos para los retratos y visitamos las localizaciones si es necesario. Preparamos cada detalle técnico para que vosotros solo os preocupéis de disfrutar.',
+      image: 'public\\images\\beso-y-abrazo-su-mujer.jpg',
+      alt: 'Detalles de planificación de boda'
     },
     {
       number: '03',
-      title: 'Cobertura del Evento',
+      title: 'El Gran Día: Cobertura Documental',
       description:
-        'Nuestro equipo profesional captura cada momento con discreción y profesionalismo.',
+        'Estaremos allí, discretos pero atentos, capturando desde los nervios previos hasta la euforia de la fiesta. Nuestro enfoque documental busca la naturalidad, sin interrupciones ni posados forzados interminables. Seremos testigos silenciosos de vuestras emociones más auténticas.',
+      image: 'public/images/hero-wedding-moment.jpg',
+      alt: 'Fotógrafo capturando momento de boda'
     },
     {
       number: '04',
-      title: 'Edición Profesional',
+      title: 'Edición Artesanal y Narrativa',
       description:
-        'Seleccionamos, editamos y perfeccionamos cada imagen y video con cuidado extremo.',
+        'La magia continúa en el estudio. Seleccionamos y editamos vuestras fotos una a una, aplicando nuestro estilo de color característico y construyendo una narrativa visual coherente. No usamos filtros automáticos; cada imagen recibe el tratamiento que merece para transmitir la emoción del momento.',
+      image: 'public/images/novio-poniendo-el-anillo-en-el-dedo-de-la-novia.jpg',
+      alt: 'Edición de fotos de boda'
     },
     {
       number: '05',
-      title: 'Entrega',
+      title: 'Entrega del Legado',
       description:
-        'Recibes tu galería online privada, descargas y materiales finales en múltiples formatos.',
+        'El momento final. Recibiréis vuestra galería privada online para compartir con familia y amigos al instante. Además, si habéis elegido álbum, maquetaremos vuestra historia en un libro de calidad museo, impreso en papeles fine-art que perdurarán por generaciones como vuestro patrimonio visual.',
+      image: 'public/images/event-celebration.jpg',
+      alt: 'Entrega de álbum de boda'
     },
   ];
 
   return (
     <>
-      <div className="container pt-48 pb-24">
-        {/* Header */}
-        <div className="text-center mb-20">
-          <h1 className="section-title mb-4">
-            Fotografía y Video de Bodas
-          </h1>
+      {/* Hero Section con Imagen de Fondo */}
+      <section className="relative pt-48 pb-32 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/images/una-joven-y-bella-novia-esta-de-pie-cerca-de-la-casa-con-su-marido.jpg" 
+            alt="Novios en su boda" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/60" />
+        </div>
+        
+        
+      </section>
+      
+      <div className="container py-24">
+        <div className="container relative z-10 max-w-3xl mx-auto text-center text-white mb-24">
+          <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase mb-6 block drop-shadow-md">
+            Capturando Recuerdos
+          </span>
+          <div className="text-center mb-16">
+          <h1 className="section-title mb-4">La experiencia</h1>
           <p className="section-subtitle">
-            Momentos auténticos, emociones reales y recuerdos eternos. Descubre nuestros paquetes de fotografía de bodas estilo fotoperiodístico y videografía cinematográfica, diseñados para narrar tu día con elegancia y cercanía.
+            Nuestro proceso de trabajo
           </p>
         </div>
-        <div className="text-center mb-20">
-         
+          
+          <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-lg">
+            No vendemos solo fotos, creamos un legado visual. Nuestra propuesta se basa en la honestidad, 
+            la elegancia y la narrativa documental. Queremos que revivas tu boda tal y como fue, con toda su emoción y belleza natural.
+          </p>
+          
+          <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-lg">
+            Nuestro proceso está diseñado para brindaros tranquilidad y resultados excepcionales. 
+            Desde el primer café hasta la entrega del álbum, os acompañamos en cada paso.
+          </p>
+          <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-lg">
+            A continuación os detallamos cómo trabajamos y qué podéis esperar de nosotros.
+          </p>
+        
         </div>
-        {/* Servicios Principales */}
-        {services.map((service) => (
-          <section key={service.id} className="mb-24">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-              {/* Contenido */}
-              <div>
-                <h2 className="text-4xl font-bold text-foreground mb-4">
-                  {service.title}
-                </h2>
-                <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                  {service.description}
-                </p>
-
-                <div className="mb-8">
-                  <p className="text-3xl font-bold text-accent mb-4">
-                    {service.price}
-                  </p>
-
-                  <h3 className="text-sm font-semibold text-accent mb-4">
-                    QUÉ INCLUYE
-                  </h3>
-                  <ul className="space-y-3">
-                    {service.includes.map((item) => (
-                      <li key={item} className="flex items-start gap-3">
-                        <Check size={20} className="text-accent flex-shrink-0 mt-0.5" />
-                        <span className="text-foreground">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <Link href="/contacto" className="cta-button-primary">
-                  Reserva tu Fecha
-                </Link>
-              </div>
-
-              {/* Proceso */}
-              <div className="bg-card border border-border rounded-sm p-8">
-                <h3 className="text-xl font-bold text-foreground mb-6">
-                  Nuestro Proceso
-                </h3>
-                <div className="space-y-6">
-                  {service.process.map((step, index) => (
-                    <div key={step} className="flex gap-4">
-                      <div className="flex-shrink-0">
-                        <div className="flex items-center justify-center h-8 w-8 rounded-full bg-accent text-accent-foreground text-sm font-bold">
-                          {index + 1}
+        {/* La Experiencia (Proceso) - Moved to top */}
+        <section className="mb-24">
+            <div className="space-y-24">
+                {processSteps.map((step, index) => (
+                    <div key={step.number} className={`flex flex-col md:flex-row gap-12 items-start ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
+                        <div className="w-full md:w-1/2 relative">
+                            <div className="absolute -top-4 -left-4 w-24 h-24 bg-accent/10 -z-10 rounded-full blur-2xl"></div>
+                             <img 
+                                src={step.image} 
+                                alt={step.alt}
+                                className="w-full h-[400px] object-cover rounded-sm shadow-xl"
+                             />
                         </div>
-                      </div>
-                      <div>
-                        <p className="text-foreground font-medium">{step}</p>
-                      </div>
+                        <div className="w-full md:w-1/2">
+                            <div className="md:hidden text-4xl font-serif font-bold text-accent opacity-50 mb-4">
+                                {step.number}
+                            </div>
+                            <h3 className="text-2xl font-serif font-bold text-foreground mb-6">{step.title}</h3>
+                            <p className="text-muted-foreground leading-relaxed text-lg">
+                                {step.description}
+                            </p>
+                        </div>
                     </div>
-                  ))}
+                ))}
+            </div>
+        </section>
+
+        <div className="text-center mb-24">
+            <Link href="/contacto" className="inline-flex items-center justify-center px-12 py-5 bg-accent text-white text-sm font-bold uppercase tracking-widest transition-all duration-300 hover:bg-black hover:scale-105 hover:shadow-2xl shadow-lg group">
+                <span>¡Nos vemos!</span>
+            </Link>
+        </div>
+
+        {/* FAQ / Dudas */}
+        <section className="container mx-auto mb-24">
+            <h2 className="text-3xl font-serif font-bold text-center mb-12">Preguntas Frecuentes</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
+                <div className="pb-4">
+                    <h3 className="font-bold text-lg mb-3 text-foreground">¿Os desplazáis fuera?</h3>
+                    <p className="text-muted-foreground leading-relaxed text-sm">¡Por supuesto! Nos encanta viajar. El desplazamiento está incluido en los primeros 100km. Para bodas de destino, consultadnos y os prepararemos un presupuesto a medida.</p>
                 </div>
-              </div>
+                <div className="pb-4">
+                    <h3 className="font-bold text-lg mb-3 text-foreground">¿Cómo reservamos?</h3>
+                    <p className="text-muted-foreground leading-relaxed text-sm">Firmamos un contrato digital y se abona una señal del 30%. El resto se abona la semana de la boda. Todo el proceso es online y sencillo.</p>
+                </div>
+                <div className="pb-4">
+                    <h3 className="font-bold text-lg mb-3 text-foreground">¿Entregáis RAWs?</h3>
+                    <p className="text-muted-foreground leading-relaxed text-sm">No entregamos archivos RAW. Entregamos una selección curada y editada (mínimo 800 fotos) que representa nuestro trabajo final terminado.</p>
+                </div>
+                <div className="pb-4">
+                    <h3 className="font-bold text-lg mb-3 text-foreground">¿Plazos de entrega?</h3>
+                    <p className="text-muted-foreground leading-relaxed text-sm">Entregamos un adelanto (teaser) la semana siguiente a la boda. La galería completa suele estar lista entre 4 y 8 semanas después del evento.</p>
+                </div>
+                <div className="pb-4">
+                    <h3 className="font-bold text-lg mb-3 text-foreground">¿Segundo fotógrafo?</h3>
+                    <p className="text-muted-foreground leading-relaxed text-sm">Sí, en bodas de más de 100 invitados o con logística compleja recomendamos siempre un segundo profesional para no perder ningún detalle.</p>
+                </div>
+                <div className="pb-4">
+                    <h3 className="font-bold text-lg mb-3 text-foreground">¿Hacéis álbumes?</h3>
+                    <p className="text-muted-foreground leading-relaxed text-sm">Sí, trabajamos con laboratorios artesanales. Diseñamos álbumes de lino y materiales nobles que perduran generaciones.</p>
+                </div>
+                <div className="pb-4">
+                    <h3 className="font-bold text-lg mb-3 text-foreground">¿Y si llueve?</h3>
+                    <p className="text-muted-foreground leading-relaxed text-sm">¡Nos adaptamos! La lluvia puede crear atmósferas mágicas. Tenemos equipo sellado y experiencia para sacar partido a cualquier clima.</p>
+                </div>
+                <div className="pb-4">
+                    <h3 className="font-bold text-lg mb-3 text-foreground">¿Equipo de repuesto?</h3>
+                    <p className="text-muted-foreground leading-relaxed text-sm">Siempre llevamos cámaras, objetivos, tarjetas y baterías de respaldo por duplicado. La seguridad de vuestros recuerdos es nuestra prioridad absoluta.</p>
+                </div>
+            </div>
+        </section>
+        
+        <div className="text-center mb-24">
+            <Link href="/contacto" className="inline-flex items-center justify-center px-12 py-5 bg-accent text-white text-sm font-bold uppercase tracking-widest transition-all duration-300 hover:bg-black hover:scale-105 hover:shadow-2xl shadow-lg group">
+                <span>¡Nos vemos!</span>
+            </Link>
+        </div>
+
+        
+        {/* Grid de Servicios Principales (Estilo Tarjetas Limpias) */}
+        {false && (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
+            {/* Tarjeta: Fotografía */}
+            <div className="bg-card border border-border p-8 flex flex-col hover:border-accent transition-all duration-300 group relative">
+                <h3 className="text-2xl font-serif font-bold mb-4 group-hover:text-accent transition-colors">Fotografía</h3>
+                <p className="text-muted-foreground text-sm mb-6 flex-grow leading-relaxed">
+                    {services[0].description}
+                </p>
+                <div className="text-3xl font-bold text-foreground mb-6 font-serif">{services[0].price}</div>
+                <ul className="space-y-4 mb-8 text-sm text-muted-foreground">
+                    {services[0].includes.slice(0, 5).map(item => (
+                        <li key={item} className="flex gap-3 items-start">
+                          <Check size={16} className="text-accent shrink-0 mt-0.5" /> 
+                          <span>{item}</span>
+                        </li>
+                    ))}
+                </ul>
+                <Link href="/contacto" className="w-full py-4 border border-foreground text-foreground text-center text-xs font-bold uppercase tracking-widest hover:bg-foreground hover:text-background transition-colors mt-auto">
+                    Ver Detalles
+                </Link>
             </div>
 
-            <div className="section-divider" />
-          </section>
-        ))}
-
-        {/* Paquetes */}
-        <section className="mb-24">
-          <h2 className="section-title text-center mb-16">Paquetes de Fotografía y Videografía Combinados</h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {packages.map((pkg) => (
-              <div
-                key={pkg.name}
-                className="bg-card border border-border rounded-sm p-8 hover:border-accent transition-colors"
-              >
-                <div className="mb-6">
-                  <h3 className="text-2xl font-bold text-foreground mb-2">
-                    {pkg.name}
-                  </h3>
-                  <p className="text-muted-foreground text-sm mb-4">
-                    {pkg.description}
-                  </p>
-                  <div className="flex items-baseline gap-2 mb-2">
-                    <p className="text-3xl font-bold text-accent">{pkg.price}</p>
-                    <span className="text-sm text-accent font-medium">
-                      {pkg.savings}
-                    </span>
-                  </div>
-                </div>
-
-                <ul className="space-y-3 mb-8">
-                  {pkg.includes.map((item) => (
-                    <li key={item} className="flex items-start gap-3">
-                      <Check size={18} className="text-accent flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-foreground">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <Link href="/contacto" className="cta-button w-full text-center">
-                  Reserva tu Fecha
-                </Link>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Proceso de Trabajo */}
-        <section className="mb-24">
-          <h2 className="section-title text-center mb-16">Proceso de Trabajo</h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
-            {processSteps.map((step) => (
-              <div key={step.number} className="text-center">
-                <div className="number-marker text-center">{step.number}</div>
-                <h3 className="text-lg font-bold text-foreground mb-3">
-                  {step.title}
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {step.description}
+            {/* Tarjeta: Video */}
+            <div className="bg-card border border-border p-8 flex flex-col hover:border-accent transition-all duration-300 group relative">
+                <h3 className="text-2xl font-serif font-bold mb-4 group-hover:text-accent transition-colors">Cinematografía</h3>
+                <p className="text-muted-foreground text-sm mb-6 flex-grow leading-relaxed">
+                    {services[1].description}
                 </p>
-              </div>
-            ))}
-          </div>
+                <div className="text-3xl font-bold text-foreground mb-6 font-serif">{services[1].price}</div>
+                <ul className="space-y-4 mb-8 text-sm text-muted-foreground">
+                    {services[1].includes.slice(0, 5).map(item => (
+                        <li key={item} className="flex gap-3 items-start">
+                          <Check size={16} className="text-accent shrink-0 mt-0.5" /> 
+                          <span>{item}</span>
+                        </li>
+                    ))}
+                </ul>
+                <Link href="/contacto" className="w-full py-4 border border-foreground text-foreground text-center text-xs font-bold uppercase tracking-widest hover:bg-foreground hover:text-background transition-colors mt-auto">
+                    Ver Detalles
+                </Link>
+            </div>
+
+            {/* Tarjeta: Pack Completo (Destacado) */}
+            <div className="bg-foreground text-background p-8 flex flex-col relative overflow-hidden transform md:-translate-y-4 shadow-2xl">
+                <div className="absolute top-0 right-0 bg-accent text-white text-[10px] font-bold px-4 py-1.5 uppercase tracking-wider">
+                    Más Popular
+                </div>
+                <h3 className="text-2xl font-serif font-bold mb-4 text-white">Foto + Video</h3>
+                <p className="text-gray-400 text-sm mb-6 flex-grow leading-relaxed">
+                    {packages[0].description}
+                </p>
+                <div className="flex items-baseline gap-3 mb-2">
+                  <div className="text-3xl font-bold text-white font-serif">{packages[0].price}</div>
+                  <span className="text-accent text-sm font-bold">{packages[0].savings}</span>
+                </div>
+                
+                <ul className="space-y-4 mb-8 text-sm text-gray-300 mt-4">
+                    {packages[0].includes.map(item => (
+                        <li key={item} className="flex gap-3 items-start">
+                          <Check size={16} className="text-accent shrink-0 mt-0.5" /> 
+                          <span>{item}</span>
+                        </li>
+                    ))}
+                </ul>
+                <Link href="/contacto" className="w-full py-4 bg-accent text-white text-center text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-colors mt-auto">
+                    Solicitar Disponibilidad
+                </Link>
+            </div>
+        </div>
+        )}
+
+        {/* Sección Premium / A medida */}
+        {false && (
+        <section className="mb-24 bg-muted/10 border-y border-border py-20">
+            <div className="max-w-4xl mx-auto text-center px-6">
+                <h2 className="text-3xl font-serif font-bold mb-6">Colección Premium Signature</h2>
+                <p className="text-muted-foreground mb-10 text-lg font-light">
+                    Para parejas que buscan la excelencia absoluta. Una experiencia integral que incluye cobertura ilimitada, dron, álbumes de lino hechos a mano y sesión pre-boda editorial.
+                </p>
+                <div className="flex flex-wrap justify-center gap-8 text-sm font-medium text-foreground mb-10 uppercase tracking-wide">
+                    <span>✦ Drone 4K</span>
+                    <span>✦ Álbum Fine Art</span>
+                    <span>✦ 2 Fotógrafos</span>
+                    <span>✦ Entrega Express</span>
+                </div>
+                <Link href="/contacto" className="inline-block border-b border-accent text-accent pb-1 hover:text-foreground transition-colors text-sm uppercase tracking-widest">
+                    Consultar opciones personalizadas
+                </Link>
+            </div>
         </section>
+        )}
 
         {/* CTA Final */}
-        <section className="bg-card border border-border rounded-sm p-12 text-center">
-          <h2 className="text-3xl font-bold text-foreground mb-4">
-            ¿Tienes preguntas?
-          </h2>
-          <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Contáctanos para una consulta gratuita. Estaremos encantados de hablar
-            sobre tu proyecto y encontrar la solución perfecta.
-          </p>
-
-          <Link href="/contacto" className="cta-button-primary inline-flex items-center gap-2">
-            Agendar Consulta
-            <ArrowRight size={18} />
-          </Link>
-        </section>
+        <div className="text-center py-12">
+            <h2 className="text-3xl font-serif font-bold mb-6">¿Empezamos la aventura?</h2>
+            <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
+                Si sientes conexión con nuestro trabajo, nos encantaría conocer vuestra historia.
+            </p>
+            <Link href="/contacto" className="cta-button-primary inline-flex items-center gap-3 px-10 py-4 text-sm tracking-widest">
+                Consultar Disponibilidad <ArrowRight size={16} />
+            </Link>
+        </div>
       </div>
     </>
   );

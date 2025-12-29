@@ -9,7 +9,7 @@ interface Client {
   id: string;
   name: string;
   email: string;
-  status: 'primer contacto' | 'conversacion iniciada' | 'cita concertada' | 'contratado' | 'descartado';
+  status: 'primer contacto' | 'conversacion iniciada' | 'cita concertada' | 'en contratacion' | 'contratado' | 'descartado';
   updated_at: string;
 }
 
@@ -17,6 +17,7 @@ const pipelineStages = [
   'primer contacto',
   'conversacion iniciada',
   'cita concertada',
+  'en contratacion',
   'contratado',
   'descartado',
 ];
@@ -112,9 +113,9 @@ export default function AdminPipeline() {
         </div>
 
         <DragDropContext onDragEnd={onDragEnd}>
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 items-start h-full overflow-x-auto pb-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-4 items-start h-full overflow-x-auto pb-4">
             {pipelineStages.map(stage => (
-              <Droppable key={stage} droppableId={stage}>
+              <Droppable key={stage} droppableId={stage} isDropDisabled={stage === 'en contratacion'}>
                 {(provided, snapshot) => (
                   <div
                     ref={provided.innerRef}

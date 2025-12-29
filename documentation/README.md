@@ -1,323 +1,237 @@
-# narrativabodas de Bodas y Eventos - Sitio Web Profesional
+# 📸 Narrativa de Bodas - Plataforma Web y Gestión Integral
 
-Un sitio web moderno, seguro y optimizado para SEO, diseñado para promocionar servicios de fotografía y videografía de bodas y eventos. Construido con React 19, TypeScript y Tailwind CSS 4.
-
-## Características Principales
-
-### Diseño
-- **Minimalismo Contemporáneo Oscuro:** Paleta elegante con negro profundo y acentos dorados
-- **Responsive:** Optimizado para desktop, tablet y mobile
-- **Rápido:** Optimizaciones de rendimiento implementadas
-- **Accesible:** Cumple con estándares WCAG 2.1
-
-### Funcionalidad
-- **Galería de Portafolio:** Showcase de trabajos con filtros y lightbox
-- **Página de Servicios:** Descripción detallada de servicios y paquetes
-- **Formulario de Contacto:** Validación de datos y protección GDPR
-- **Navegación Intuitiva:** Menú sticky con responsive mobile
-
-### Seguridad
-- **HTTPS:** Certificados SSL/TLS automáticos
-- **Content Security Policy:** Protección contra XSS
-- **Validación de Formularios:** Cliente y servidor
-- **GDPR Compliance:** Consentimiento y política de privacidad
-
-### SEO/SEM
-- **Meta Tags Completos:** Title, description, Open Graph
-- **Schema.org Markup:** LocalBusiness structured data
-- **Sitemap y Robots.txt:** Indexación optimizada
-- **Velocidad:** Lazy loading, minificación, compresión
-- **Mobile Optimization:** Mobile-first responsive design
+Este proyecto es una solución completa para fotógrafos de bodas y eventos, que combina un sitio web público elegante y optimizado para SEO con un potente panel de administración (Backoffice) para la gestión del negocio, clientes y galerías privadas.
 
 ---
 
-## Inicio Rápido
+## 🚀 Características Principales
 
-### Requisitos
-- Node.js 18+ (incluido pnpm)
-- Editor de código (VSCode, PyCharm, etc.)
+### 🌐 Parte Cliente (Web Pública)
+Diseñada con un estilo "Minimalismo Contemporáneo Oscuro" para resaltar la fotografía.
 
-### Instalación
+*   **Páginas Informativas**: Inicio, Portafolio, Servicios y Contacto.
+*   **Galerías Privadas**: Acceso seguro para clientes mediante token único y contraseña para ver y descargar sus fotos.
+*   **Diseño Responsive**: Adaptado perfectamente a móviles, tablets y escritorio.
+*   **Optimización**: Carga rápida de imágenes y SEO técnico implementado.
+*   **Chatbot de Reservas**: Agente flotante para captación de leads y consultas rápidas.
 
-```bash
-# Clonar o descargar el proyecto
-cd /home/ubuntu/narrativabodas-web
+### 🛠️ Parte Backoffice (Panel de Administración)
+Un centro de control protegido para gestionar todo el flujo de trabajo.
 
-# Instalar dependencias (si es necesario)
-pnpm install
-
-# Iniciar servidor de desarrollo
-pnpm dev
-
-# Abrir en navegador
-# http://localhost:3000
-```
-
-### Estructura de Carpetas
-
-```
-narrativabodas-web/
-├── client/
-│   ├── public/
-│   │   ├── images/              ← Imágenes del sitio
-│   │   ├── sitemap.xml          ← Mapa del sitio para SEO
-│   │   └── robots.txt           ← Instrucciones para buscadores
-│   ├── src/
-│   │   ├── pages/               ← Páginas (Home, Portfolio, Services, Contact)
-│   │   ├── components/          ← Componentes reutilizables
-│   │   ├── App.tsx              ← Rutas principales
-│   │   ├── index.css            ← Estilos globales
-│   │   └── main.tsx             ← Punto de entrada
-│   └── index.html               ← HTML principal
-├── CONTENT_STRUCTURE.md         ← Estructura de contenido y SEO
-├── SECURITY_AND_OPTIMIZATION.md ← Guía de seguridad y optimizaciones
-├── EDITING_GUIDE.md             ← Guía de edición del sitio
-└── README.md                    ← Este archivo
-```
+*   **Dashboard**: Vista general del estado del negocio.
+*   **CRM de Clientes**:
+    *   Gestión de leads y clientes (estados: primer contacto, cita concertada, contratado, etc.).
+    *   Historial de actividades y notas por cliente.
+    *   Filtros avanzados y ordenación.
+*   **Agenda y Calendario**:
+    *   Gestión de citas y eventos.
+    *   Control de disponibilidad (bloqueo de fechas).
+*   **Gestión de Galerías**:
+    *   Creación de galerías privadas con subida múltiple de imágenes.
+    *   Generación de enlaces seguros para compartir.
+    *   Gestión de fotos (añadir/eliminar) en galerías existentes.
+*   **Gestión de Equipo**: Administración de usuarios (trabajadores) y roles.
+*   **Agente Inteligente**: Hoja de ruta diaria y tareas automáticas.
 
 ---
 
-## Páginas Principales
-
-### 1. **Inicio** (`/`)
-- Hero section con imagen de fondo
-- Propuesta de valor (3 columnas)
-- Portafolio destacado
-- Servicios principales
-- Testimonios
-- Llamada a acción final
-
-### 2. **Portafolio** (`/portfolio`)
-- Galería completa con filtros
-- Lightbox para ver imágenes en detalle
-- Información de cada proyecto
-- Estadísticas (bodas, eventos, calificación)
-
-### 3. **Servicios** (`/servicios`)
-- Fotografía de bodas
-- Videografía cinematográfica
-- Paquetes especiales
-- Proceso de trabajo
-- Precios y opciones
-
-### 4. **Contacto** (`/contacto`)
-- Formulario de contacto con validación
-- Información de contacto
-- Horario de atención
-- Redes sociales
-
----
-
-## Edición del Sitio
-
-### Cambios Comunes
-
-#### Cambiar Texto
-1. Abrir archivo en VSCode o PyCharm
-2. Localizar el texto a cambiar
-3. Guardar archivo
-4. El servidor recargará automáticamente
-
-**Ejemplo:** Cambiar título en Home
-```tsx
-// client/src/pages/Home.tsx (línea ~48)
-<h1>Tu nuevo título aquí</h1>
-```
-
-#### Cambiar Imágenes
-1. Guardar nueva imagen en `client/public/images/`
-2. Usar el mismo nombre o actualizar referencia en código
-3. Optimizar imagen (máximo 1MB)
-
-#### Cambiar Colores
-1. Editar `client/src/index.css`
-2. Cambiar valores OKLCH en `:root`
-3. Los cambios se aplican globalmente
-
-#### Cambiar Información de Contacto
-1. Editar `client/src/components/Footer.tsx`
-2. Actualizar email, teléfono, ubicación
-3. Guardar y recargar
-
-**Para más detalles, ver `EDITING_GUIDE.md`**
-
----
-
-## Optimizaciones Implementadas
-
-### Rendimiento
-- ✅ Lazy loading de imágenes
-- ✅ Minificación de CSS/JS
-- ✅ Compresión Gzip
-- ✅ Caché de navegador
-- ✅ Code splitting automático
-
-### SEO
-- ✅ Meta tags completos
-- ✅ Schema.org markup
-- ✅ Sitemap.xml
-- ✅ Robots.txt
-- ✅ Open Graph tags
-- ✅ Estructura de headings correcta
-
-### Seguridad
-- ✅ HTTPS (Manus proporciona)
-- ✅ Content Security Policy
-- ✅ Validación de formularios
-- ✅ Protección GDPR
-- ✅ Sanitización de contenido
-
-### Accesibilidad
-- ✅ Contraste de colores adecuado
-- ✅ Alt text en imágenes
-- ✅ Navegación por teclado
-- ✅ ARIA labels
-- ✅ Estructura semántica HTML
-
----
-
-## Herramientas y Tecnologías
+## 💻 Stack Tecnológico
 
 ### Frontend
-- **React 19:** Framework de UI
-- **TypeScript:** Tipado estático
-- **Tailwind CSS 4:** Utilidades CSS
-- **Wouter:** Enrutamiento ligero
-- **Lucide React:** Iconos
-- **Sonner:** Notificaciones
+*   **Framework**: React 19 (Vite)
+*   **Lenguaje**: TypeScript
+*   **Estilos**: Tailwind CSS 4
+*   **Routing**: Wouter
+*   **UI Components**: Lucide React (iconos), Sonner (notificaciones).
 
-### Desarrollo
-- **Vite:** Build tool rápido
-- **ESBuild:** Minificación
-- **Prettier:** Formateo de código
-- **TypeScript:** Verificación de tipos
-
-### Hosting
-- **Manus:** Plataforma de hosting con SSL automático
+### Backend
+*   **Servidor**: Node.js con Express
+*   **Base de Datos**: Supabase (PostgreSQL)
+*   **Autenticación**: JWT (JSON Web Tokens) y Bcrypt para hashing de contraseñas.
+*   **Archivos**: Multer para gestión de subida de imágenes.
 
 ---
 
-## Checklist de Lanzamiento
+## ⚙️ Instalación y Configuración
 
-Antes de publicar el sitio:
+### 1. Prerrequisitos
+*   Node.js (v18 o superior)
+*   npm
+*   Una cuenta y proyecto en [Supabase](https://supabase.com).
 
-- [ ] Cambiar dominio en `client/index.html` (og:url)
-- [ ] Actualizar información de contacto
-- [ ] Agregar fotos reales del equipo
-- [ ] Verificar todos los links
-- [ ] Probar formulario de contacto
-- [ ] Revisar en mobile
-- [ ] Registrar en Google Search Console
-- [ ] Crear Google My Business
-- [ ] Configurar Google Analytics
-- [ ] Crear sitemap.xml con URLs reales
-- [ ] Actualizar robots.txt con dominio real
-- [ ] Probar velocidad en PageSpeed Insights
-- [ ] Verificar seguridad en SSL Labs
+### 2. Clonar e Instalar
 
----
-
-## Mantenimiento
-
-### Actualizar Regularmente
-- Agregar nuevos trabajos al portafolio
-- Actualizar precios y servicios
-- Revisar y responder formularios de contacto
-- Actualizar testimonios
-- Mantener información de contacto actualizada
-
-### Monitoreo
-- Revisar Google Analytics mensualmente
-- Monitorear posicionamiento en Google Search Console
-- Verificar velocidad de página
-- Revisar errores en consola
-
-### Seguridad
-- Actualizar dependencias regularmente
-- Ejecutar `pnpm audit` para vulnerabilidades
-- Revisar logs de acceso
-- Hacer backup de contenido
-
----
-
-## Troubleshooting
-
-### El sitio no se carga
 ```bash
-# Verificar que el servidor esté corriendo
-pnpm dev
-
-# Limpiar caché y reinstalar dependencias
-rm -rf node_modules pnpm-lock.yaml
-pnpm install
+# Instalar dependencias
+npm install
 ```
 
-### Las imágenes no se ven
-- Verificar que existan en `client/public/images/`
-- Revisar la ruta en el código (debe ser `/images/nombre.jpg`)
-- Verificar nombre del archivo (sensible a mayúsculas)
+### 3. Configurar Variables de Entorno
 
-### Los estilos no se aplican
-- Limpiar caché: Ctrl+Shift+Delete
-- Verificar clases de Tailwind en `index.css`
-- Reiniciar servidor: `pnpm dev`
+Crea un archivo `.env.local` en la raíz del proyecto basándote en el archivo `.env.example` incluido.
 
----
+```env
+# .env.local
 
-## Documentación Adicional
+# Supabase (Obtener desde Project Settings > API)
+VITE_SUPABASE_URL="https://tu-proyecto.supabase.co"
+VITE_SUPABASE_ANON_KEY="tu-anon-key"
+SUPABASE_SERVICE_ROLE_KEY="tu-service-role-key"
 
-- **`CONTENT_STRUCTURE.md`** - Estructura de contenido y estrategia SEO
-- **`SECURITY_AND_OPTIMIZATION.md`** - Detalles de seguridad y optimizaciones
-- **`EDITING_GUIDE.md`** - Guía completa de edición del sitio
-- **`ideas.md`** - Enfoques de diseño considerados
+# Backend
+VITE_API_URL="http://localhost:3001"
+JWT_SECRET="tu_secreto_super_seguro_para_jwt"
 
----
+# Opcional: Configuración de Email (SMTP) y Google Calendar
+```
 
-## Recursos Útiles
-
-### Documentación Oficial
-- [React Documentation](https://react.dev)
-- [Tailwind CSS](https://tailwindcss.com)
-- [TypeScript Handbook](https://www.typescriptlang.org/docs/)
-- [Vite Guide](https://vitejs.dev/guide/)
-
-### Herramientas SEO
-- [Google Search Console](https://search.google.com/search-console)
-- [Google PageSpeed Insights](https://pagespeed.web.dev)
-- [Schema.org Validator](https://validator.schema.org)
-
-### Herramientas de Desarrollo
-- [VSCode](https://code.visualstudio.com)
-- [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
-- [Lighthouse](https://developers.google.com/web/tools/lighthouse)
+### 4. Base de Datos
+Ejecuta los scripts SQL proporcionados en la documentación (`documentation/CREATE_GALLERY_TABLE.sql` y otros esquemas necesarios) en el editor SQL de tu proyecto en Supabase para crear las tablas necesarias (`clients`, `workers`, `private_galleries`, `bookings`, etc.).
 
 ---
 
-## Soporte y Ayuda
+## ▶️ Ejecución
 
-Para preguntas sobre:
-- **Edición del sitio:** Ver `EDITING_GUIDE.md`
-- **Seguridad:** Ver `SECURITY_AND_OPTIMIZATION.md`
-- **Contenido:** Ver `CONTENT_STRUCTURE.md`
-- **Código:** Consultar documentación oficial de React/TypeScript
+El proyecto requiere ejecutar tanto el servidor de frontend como el de backend.
+
+### Opción A: Todo en uno (Recomendado para desarrollo)
+
+```bash
+npm run dev:all
+```
+*(Nota: Asegúrate de tener configurado este script en package.json, o usa la Opción B)*
+
+### Opción B: Terminales separadas
+
+**Terminal 1 (Frontend):**
+```bash
+npm run dev
+```
+Acceso: `http://localhost:5174`
+
+**Terminal 2 (Backend):**
+```bash
+npm run server
+```
+API: `http://localhost:3001`
 
 ---
 
-## Licencia
+## 📂 Estructura del Proyecto
 
-Este proyecto está disponible para uso comercial. Todos los derechos reservados.
+```
+├── public/             # Archivos estáticos y subidas de galería
+├── server/             # Código del Backend (Express)
+│   ├── routes/         # Rutas de la API
+│   └── ...
+├── src/                # Código del Frontend (React)
+│   ├── components/     # Componentes reutilizables (Nav, Footer, etc.)
+│   ├── contexts/       # Estado global (AuthContext)
+│   ├── pages/          # Vistas (Home, AdminDashboard, PrivateGallery, etc.)
+│   └── ...
+├── documentation/      # Guías detalladas y diagramas
+├── server.ts           # Punto de entrada del Backend
+└── ...
+```
 
 ---
 
-## Información de Contacto
+## 🔐 Seguridad
 
-**narrativabodas de Bodas y Eventos**
-- Email: contacto@narrativabodas.com
-- Teléfono: +34 XXX XXX XXX
-- Ubicación: Madrid, España
+*   **Rutas Protegidas**: El panel de administración (`/admin/*`) requiere autenticación JWT.
+*   **Galerías Seguras**: Acceso mediante token único en URL + contraseña específica por galería.
+*   **Datos Sensibles**: Las contraseñas se almacenan hasheadas (bcrypt). Las claves de API sensibles se mantienen en el backend o variables de entorno.
 
----
 
-**Última actualización:** 2 de diciembre de 2024
-**Versión:** 1.0.0
+# Módulo de Gestión de Publicidad (Ads Manager)
 
+Este documento detalla la arquitectura y requisitos para integrar la gestión de campañas de Facebook, Instagram y TikTok en el panel de administración existente.
+
+## 1. Alcance del Módulo
+El objetivo es permitir al administrador (fotógrafo):
+1. Conectar sus cuentas publicitarias (OAuth).
+2. Ver un dashboard unificado de rendimiento (Gasto, Clics, Conversiones).
+3. Pausar o activar campañas existentes.
+4. (Opcional) Crear anuncios rápidos basados en las galerías del sitio web.
+
+## 2. Requisitos de Integración
+
+### Meta (Facebook & Instagram)
+- **Plataforma:** [Meta for Developers](https://developers.facebook.com/)
+- **API:** Marketing API
+- **Permisos:** `ads_management`, `ads_read`, `read_insights`.
+- **Nivel de Acceso:** Se requiere "Standard Access" para uso en producción.
+
+### TikTok
+- **Plataforma:** TikTok for Business Developers
+- **API:** TikTok Marketing API
+- **Permisos:** `advertiser_management`, `reporting`.
+
+## 3. Modelo de Datos (Schema Sugerido)
+
+Para almacenar las credenciales y el caché de las campañas:
+
+```sql
+-- Tabla para credenciales de plataformas
+CREATE TABLE ad_platforms (
+    id INT PRIMARY KEY,
+    provider VARCHAR(50), -- 'meta', 'tiktok'
+    access_token TEXT,
+    refresh_token TEXT,
+    ad_account_id VARCHAR(100),
+    token_expires_at DATETIME,
+    is_active BOOLEAN DEFAULT false
+);
+
+-- Tabla para caché de métricas (actualización diaria/horaria)
+CREATE TABLE ad_campaign_metrics (
+    id INT PRIMARY KEY,
+    platform_campaign_id VARCHAR(100),
+    platform VARCHAR(50),
+    spend DECIMAL(10, 2),
+    impressions INT,
+    clicks INT,
+    date DATE
+);
+```
+
+## 4. Endpoints del Backend (Diseño API)
+
+Se necesitan rutas en el servidor para manejar la autenticación y la obtención de datos.
+
+- `GET /api/ads/auth/{provider}`: Inicia el flujo OAuth.
+- `GET /api/ads/callback/{provider}`: Recibe el código y obtiene el token.
+- `GET /api/ads/campaigns`: Obtiene lista unificada de campañas activas.
+- `POST /api/ads/campaign/{id}/toggle`: Pausa o activa una campaña.
+
+## 5. Estrategia de Frontend (UI)
+
+Siguiendo los lineamientos de diseño de `ideas.md`:
+
+### Dashboard Unificado
+- **Estilo:** Minimalista (Enfoque 1) o Moderno (Enfoque 2).
+- **Tarjetas de Resumen:**
+  - Gasto Total (Mes actual)
+  - Costo por Lead (Parejas interesadas)
+- **Gráfico Comparativo:** Líneas de colores (Azul para FB, Negro para TikTok) mostrando impresiones vs días.
+
+### Componente de Gestión
+```jsx
+// Ejemplo conceptual (React)
+const AdsDashboard = () => {
+  const { data: campaigns } = useQuery('campaigns');
+
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <PlatformCard platform="meta" icon={<FaFacebook />} data={campaigns.meta} />
+      <PlatformCard platform="tiktok" icon={<FaTiktok />} data={campaigns.tiktok} />
+    </div>
+  );
+};
+```
+
+## 6. Pasos de Implementación
+1. Registrar aplicaciones en los portales de desarrolladores de Meta y TikTok.
+2. Implementar flujo OAuth en el backend.
+3. Crear CRON jobs para sincronizar métricas cada hora (evitar límites de API).
+4. Construir la interfaz en el Admin Panel.

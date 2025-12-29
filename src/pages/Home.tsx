@@ -86,27 +86,49 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden -mt-32">
-        <div className="absolute inset-0 z-0 bg-cover bg-center" style={{ backgroundImage: 'url(/images/novio-poniendo-el-anillo-en-el-dedo-de-la-novia.jpg)' }}>
-          <div className="absolute inset-0 bg-black/50" />
+      <section className="relative h-screen flex items-end pb-16 md:pb-24 overflow-hidden -mt-32 border-[12px] md:border-[16px] border-accent box-border">
+        <div className="absolute inset-0 z-0 bg-cover bg-center transition-transform duration-1000 hover:scale-105" style={{ backgroundImage: 'url(/images/novio-poniendo-el-anillo-en-el-dedo-de-la-novia.jpg)' }}>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
         </div>
 
-        <div className="relative z-10 text-center max-w-3xl text-white px-4">
-          <h1 className="text-5xl md:text-6xl mb-6 leading-tight text-primary font-carnival tracking-tight">
-            Narrativa de Bodas
-          </h1>
+        {/* Magazine Header Elements */}
+        <div className="absolute top-0 left-0 w-full p-6 md:p-10 flex justify-between items-start z-50 pointer-events-none">
+            <div className="text-white font-bold tracking-widest uppercase text-xs md:text-sm border-b-2 border-accent pb-1">
+                Edición Especial
+            </div>
+            <div className="text-white font-bold tracking-widest uppercase text-xs md:text-sm">
+                Vol. 01
+            </div>
+        </div>
 
-          <p className="text-lg md:text-xl text-gray-200 mb-8 font-light">
-            Capturamos cada emoción, cada detalle y cada sonrisa. Nuestro estilo documentalista combina elegancia y naturalidad de de boda para crear recuerdos que durarán toda la vida.
-          </p>
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12">
+          <div className="max-w-5xl">
+            <span className="inline-block bg-accent text-white text-xs font-bold px-3 py-1 mb-4 uppercase tracking-wider">
+              Historia de Portada
+            </span>
+            
+            <Link href="/" className="block mb-8 hover:opacity-90 transition-opacity -ml-14">
+              <img 
+                src="/images/logo_portada.png"
+                alt="Narrativa de Bodas por Cristina y Luis"
+                className="w-full max-w-md drop-shadow-2xl"
+              />
+            </Link>
 
-          <div className="flex flex-row gap-4 justify-center flex-wrap">
-            <Link href="/portfolio" className="cta-button-primary">
-              Ver Portfolio de Bodas
-            </Link>
-            <Link href="/contacto" className="cta-button">
-              Presupuesto Personalizado
-            </Link>
+            <div className="flex flex-col md:flex-row gap-8 items-start md:items-end justify-between border-t border-white/20 pt-8 mt-4">
+                <p className="text-lg md:text-xl text-gray-200 font-light max-w-xl leading-relaxed font-serif">
+                    Capturamos cada emoción, cada detalle y cada sonrisa. Un enfoque documental que combina la elegancia editorial con la naturalidad del momento.
+                </p>
+
+                <div className="flex flex-row gap-0 shrink-0">
+                    <Link href="/portfolio" className="px-8 py-4 bg-white text-black font-bold hover:bg-gray-200 transition-colors uppercase tracking-widest text-xs md:text-sm">
+                    Ver Portfolio
+                    </Link>
+                    <Link href="/contacto" className="px-8 py-4 bg-accent text-white font-bold hover:bg-accent/90 transition-colors uppercase tracking-widest text-xs md:text-sm">
+                    Contactar
+                    </Link>
+                </div>
+            </div>
           </div>
         </div>
       </section>
@@ -125,7 +147,7 @@ export default function Home() {
             },
             {
               title: 'Equipo Profesional y Creativo',
-              description: 'Fotógrafos y videógrafos con experiencia en bodas y todo tipo de eventos, comprometidos con la excelencia.',
+              description: 'Fotógrafos y camarógrafos profesionales con experiencia en bodas y todo tipo de eventos, comprometidos con la excelencia.',
               icon: '02',
             },
             {
@@ -152,7 +174,7 @@ export default function Home() {
         <div className="container flex flex-col md:flex-row items-center gap-12">
           <div className="md:w-1/2">
             <img
-              src="public/images/fotoluis.jpg"
+              src="/images/fotoluis.jpg"
               alt="Equipo de fotógrafos y videógrafos profesionales para bodas" 
               className="rounded-sm shadow-lg"
             />
@@ -162,23 +184,29 @@ export default function Home() {
               Cristina y Luis   
             </h2>
                      
-            <p className="text-muted-foreground mb-4 leading-relaxed">
+            <p className="text-lg text-muted-foreground mb-4 leading-relaxed">
               Somos fotógrafos y videógrafos especializados en bodas y todo tipo de eventos auténticos. 
               Nos apasiona capturar la esencia de cada pareja con estilo documentalista elegante y natural.
             </p>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-lg text-muted-foreground leading-relaxed">
               Nuestro enfoque combina discreción, creatividad y atención al detalle, garantizando recuerdos visuales que podrás revivir una y otra vez. 
               Cada boda es única, y nuestro compromiso es reflejar esa autenticidad en cada imagen y video.
             </p>
+            <div className="mt-8 flex justify-center md:justify-start">
+              <Link href="/nosotros" className="px-8 py-3 border-2 border-accent text-accent font-bold uppercase tracking-widest text-xs hover:bg-accent hover:text-white transition-colors">
+               ¿Nos Conocenos?
+              </Link>
+            </div>
           </div>
         </div>
+        
       </section>
 
       {/* Servicios */}
       <section className="bg-card/50 py-20 md:py-28">
         <div className="container">
           <h2 className="section-title text-center mb-16">
-            Nuestros Servicios de Fotografía y Video
+            ¿Qué hacemos?
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
