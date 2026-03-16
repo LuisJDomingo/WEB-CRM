@@ -63,9 +63,21 @@ Un centro de control protegido para gestionar todo el flujo de trabajo.
 ### 2. Clonar e Instalar
 
 ```bash
+# IMPORTANTE: ejecuta estos comandos dentro de la carpeta WEB-CRM (donde está package.json)
+# Ejemplo en Windows:
+# cd C:\\Users\\luisd\\Desktop\\prueba\\WEB-CRM
+
 # Instalar dependencias
 npm install
 ```
+
+> Si ves el error `ENOENT: no such file or directory, open ...\package.json`, estás ejecutando `npm` fuera de la raíz del proyecto.
+
+> Si ves errores `ERESOLVE` por dependencias de React al instalar, prueba con:
+>
+> ```bash
+> npm install --legacy-peer-deps
+> ```
 
 ### 3. Configurar Variables de Entorno
 
