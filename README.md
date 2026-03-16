@@ -113,8 +113,13 @@ El proyecto requiere ejecutar tanto el servidor de frontend como el de backend.
 npm run start:all
 ```
 
-> Si el chatbot falla al iniciar, instala sus dependencias de Python:
+> Si el chatbot falla al iniciar por `No module named uvicorn`, instala sus dependencias de Python:
 >
+> ```bash
+> npm run chatbot:install
+> ```
+>
+> (Alternativa manual)
 > ```bash
 > cd agente_de_reservas
 > python -m pip install -r requirements.txt

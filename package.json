@@ -8,9 +8,10 @@
     "preview": "vite preview",
     "lint": "prettier --check .",
     "server": "tsx watch server.ts",
-    "chatbot": "node scripts/run-chatbot.mjs || py -m uvicorn app.main:app --reload --port 8000 --app-dir agente_de_reservas || python -m uvicorn app.main:app --reload --port 8000 --app-dir agente_de_reservas",
+    "chatbot": "node scripts/run-chatbot.mjs",
     "start:all": "npx concurrently \"npm run server\" \"npm run chatbot\" \"npm run dev\"",
-    "clean:install": "rd /s /q node_modules & del package-lock.json & npm install"
+    "clean:install": "rd /s /q node_modules & del package-lock.json & npm install",
+    "chatbot:install": "py -m pip install -r agente_de_reservas/requirements.txt || python -m pip install -r agente_de_reservas/requirements.txt || python3 -m pip install -r agente_de_reservas/requirements.txt"
   },
   "dependencies": {
     "@hello-pangea/dnd": "^16.6.0",
