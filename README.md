@@ -57,14 +57,27 @@ Un centro de control protegido para gestionar todo el flujo de trabajo.
 ### 1. Prerrequisitos
 *   Node.js (v18 o superior)
 *   npm
+*   Python 3.10+ (solo para el chatbot de reservas)
 *   Una cuenta y proyecto en [Supabase](https://supabase.com).
 
 ### 2. Clonar e Instalar
 
 ```bash
+# IMPORTANTE: ejecuta estos comandos dentro de la carpeta WEB-CRM (donde está package.json)
+# Ejemplo en Windows:
+# cd C:\\Users\\luisd\\Desktop\\prueba\\WEB-CRM
+
 # Instalar dependencias
 npm install
 ```
+
+> Si ves el error `ENOENT: no such file or directory, open ...\package.json`, estás ejecutando `npm` fuera de la raíz del proyecto.
+
+> Si ves errores `ERESOLVE` por dependencias de React al instalar, prueba con:
+>
+> ```bash
+> npm install --legacy-peer-deps
+> ```
 
 ### 3. Configurar Variables de Entorno
 
@@ -97,9 +110,15 @@ El proyecto requiere ejecutar tanto el servidor de frontend como el de backend.
 ### Opción A: Todo en uno (Recomendado para desarrollo)
 
 ```bash
-npm run dev:all
+npm run start:all
 ```
-*(Nota: Asegúrate de tener configurado este script en package.json, o usa la Opción B)*
+
+> Si el chatbot falla al iniciar, instala sus dependencias de Python:
+>
+> ```bash
+> cd agente_de_reservas
+> python -m pip install -r requirements.txt
+> ```
 
 ### Opción B: Terminales separadas
 
