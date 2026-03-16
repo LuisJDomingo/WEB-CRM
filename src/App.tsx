@@ -14,14 +14,8 @@ import { Layout } from "./Layout";
 import { AuthProvider } from './contexts/AuthContext';
 
 // Pages
-import Home from './pages/Home';
-import Portfolio from './pages/Portfolio';
-import Services from './pages/Services';
-import Contact from './pages/Contact';
+import UnderConstruction from './pages/UnderConstruction';
 import NotFound from './pages/NotFound';
-import PrivateGallery from './pages/PrivateGallery';
-import PublicBlog from "./pages/PublicBlog";
-import PublicContract from './pages/PublicContract';
 
 // Admin Pages
 import AdminDashboard from './pages/AdminDashboard';
@@ -40,10 +34,10 @@ function Router() {
   return (
     <Switch>
       {/* Public Routes */}
-      <Route path="/" component={Home} />
-      <Route path="/portfolio" component={Portfolio} />
-      <Route path="/servicios" component={Services} />
-      <Route path="/contacto" component={Contact} />
+      <Route path="/" component={UnderConstruction} />
+      <Route path="/portfolio" component={UnderConstruction} />
+      <Route path="/servicios" component={UnderConstruction} />
+      <Route path="/contacto" component={UnderConstruction} />
       
       {/* Admin Routes */}
       <Route path="/admin" component={AdminDashboard} />
@@ -59,8 +53,8 @@ function Router() {
       <Route path="/admin/rules" component={AdminTaskRules} />
 
       {/* Specific Routes */}
-      <Route path="/contract/:token" component={PublicContract} />
-      <Route path="/gallery/:token" component={PrivateGallery} />
+      <Route path="/contract/:token" component={UnderConstruction} />
+      <Route path="/gallery/:token" component={UnderConstruction} />
       
       {/* 404 & Fallback */}
       <Route path="/404" component={NotFound} />
@@ -70,15 +64,6 @@ function Router() {
 }
 
 function App() {
-  // 1. Lógica de Subdominio: Detectar si estamos en 'news.'
-  const isNewsSubdomain = window.location.hostname.startsWith('news.');
-
-  // 2. Si es el subdominio de noticias, renderizamos SOLO el Blog
-  if (isNewsSubdomain) {
-    return <PublicBlog />;
-  }
-
-  // 3. Si no, renderizamos la aplicación normal
   return (
     <AuthProvider>
       <ErrorBoundary>
